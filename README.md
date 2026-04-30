@@ -4,4 +4,4 @@
 ![изображение live-server](image.png)
 Live-server является расширением VSCode
 
-https://sussyamogus2016.github.io/mesto-production/
+https://github.com/klopiss/mesto-production
