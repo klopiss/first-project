@@ -72,7 +72,7 @@ const handleInfoClick = (cardId) => {
   getCardList()
     .then((cards) => {
       const cardData = cards.find(card => card._id === cardId);
-      
+    if (!cardData) return;
       cardInfoModalInfoList.innerHTML = "";
       cardInfoModalInfoList.append(
         createInfoString("Описание:", cardData.name),
