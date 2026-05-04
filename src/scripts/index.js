@@ -147,6 +147,10 @@ const handleProfileFormSubmit = (evt) => {
     });
 };
 
+const handleLikeClick = (likeButton, cardId) => {  //добавила!
+  likeCard(likeButton, cardId, changeLikeCardStatus);
+};
+
 const handleAvatarFromSubmit = (evt) => {
   evt.preventDefault();
   const submitButton = avatarForm.querySelector('.popup__button');
@@ -181,9 +185,8 @@ const handleCardFormSubmit = (evt) => {
       placesWrap.prepend(
         createCardElement(newCard, {
           onPreviewPicture: handlePreviewPicture,
-          onLikeIcon: likeCard,
+          onLikeIcon: handleLikeClick,
           onDeleteCard: handleDeleteCard,
-          changeLikeCardStatus: changeLikeCardStatus,
           onInfoClick: handleInfoClick,
         }, currentUserId)
       );
@@ -245,9 +248,8 @@ Promise.all([getCardList(), getUserInfo()])
       placesWrap.append(
         createCardElement(card, {
           onPreviewPicture: handlePreviewPicture,
-          onLikeIcon: likeCard,
+          onLikeIcon: handleLikeClick,
           onDeleteCard: handleDeleteCard,
-          changeLikeCardStatus: changeLikeCardStatus,
           onInfoClick: handleInfoClick,
         }, currentUserId)
       );

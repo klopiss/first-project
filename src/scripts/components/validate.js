@@ -13,6 +13,12 @@ const hideInputError = (formElement, inputElement, config) => {
 };
 
 const checkInputValidity = (formElement, inputElement, config) => {
+  if (inputElement.validity.patternMismatch) { //добавила + в index.html
+    inputElement.setCustomValidity(inputElement.dataset.errorMessage);
+  } else {
+    inputElement.setCustomValidity('');
+  }
+
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else {

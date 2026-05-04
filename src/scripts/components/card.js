@@ -25,7 +25,7 @@ const getTemplate = () => {
 
 export const createCardElement = (
   data,
-  { onPreviewPicture, onLikeIcon, onDeleteCard, changeLikeCardStatus, onInfoClick }, 
+  { onPreviewPicture, onLikeIcon, onDeleteCard, onInfoClick }, 
   currentUserId  
 ) => {
   const cardElement = getTemplate();
@@ -52,7 +52,7 @@ export const createCardElement = (
   }
 
   if (onLikeIcon) {
-    likeButton.addEventListener("click", () => onLikeIcon(likeButton, data._id, changeLikeCardStatus));
+    likeButton.addEventListener("click", () => onLikeIcon(likeButton, data._id));
   }
 
   if (onPreviewPicture) {
